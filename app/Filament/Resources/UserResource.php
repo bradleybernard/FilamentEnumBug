@@ -24,9 +24,10 @@ class UserResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('provider_type')
-                    ->required()
-                    ->numeric(),
+                Forms\Components\Select::make('provider_type')
+                    ->options(UserProviderType::class)
+                    ->required(),
+
                 Forms\Components\TextInput::make('name')
                     ->required(),
                 Forms\Components\TextInput::make('email')
